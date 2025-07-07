@@ -4,21 +4,20 @@ import { ChefHat } from 'lucide-react';
 
 export function About() {
   return (
-    <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-background py-24 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto text-center">
-        <ChefHat className="mx-auto h-12 w-12 text-amber-500" />
-        <h2 className="mt-4 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+        <ChefHat className="mx-auto h-16 w-16 text-primary" />
+        <h2 className="mt-6 text-4xl font-extrabold text-text sm:text-5xl font-serif">
           About the Chef
         </h2>
-        <div className="mt-8 max-w-3xl mx-auto text-lg text-gray-600">
+        <div className="mt-10 max-w-4xl mx-auto text-xl text-gray-600 space-y-6">
            <p>
-            Welcome! This is a placeholder for the chef's bio. Here you can write about your passion for cooking, your culinary philosophy, years of experience, and what makes your services unique.
+            With over 15 years of experience in Michelin-starred kitchens, Chef [Name] brings a passion for innovation and a commitment to quality in every dish.
           </p>
-          <p className="mt-4">
-            Specialties include farm-to-table concepts, modern European cuisine, and bespoke menu creation.
+          <p>
+            Our philosophy is simple: use the freshest, locally-sourced ingredients to create unforgettable culinary experiences. We specialize in modern European cuisine with a creative twist.
           </p>
         </div>
-         {/* You can add a photo and a testimonial slider here later */}
       </div>
     </div>
   );

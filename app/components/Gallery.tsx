@@ -14,18 +14,20 @@ const galleryImages = [
 
 export function Gallery() {
   return (
-    <div className="container mx-auto py-12 px-4">
-      <h2 className="text-4xl font-bold text-center mb-8">Gallery</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {galleryImages.map((image) => (
-          <div key={image.id} className="overflow-hidden rounded-lg shadow-md">
-            <img 
-              src={image.url} 
-              alt={image.alt} 
-              className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300" 
-            />
-          </div>
-        ))}
+    <div className="bg-background py-24 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto">
+        <h2 className="text-4xl font-extrabold text-text sm:text-5xl text-center font-serif mb-16">Gallery</h2>
+        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+          {galleryImages.map((image) => (
+            <div key={image.id} className="overflow-hidden rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+              <img 
+                src={image.url} 
+                alt={image.alt} 
+                className="w-full h-auto object-cover" 
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

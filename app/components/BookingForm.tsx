@@ -39,53 +39,59 @@ export function BookingForm() {
   };
 
   return (
-    <div className="container mx-auto py-12 px-4 max-w-2xl">
-      <h2 className="text-4xl font-bold text-center mb-8">Book a Service</h2>
-      <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-lg shadow-md">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</label>
-          <input type="text" name="name" id="name" required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500" />
-        </div>
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address</label>
-          <input type="email" name="email" id="email" required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500" />
-        </div>
-        <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number</label>
-          <input type="tel" name="phone" id="phone" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500" />
-        </div>
-        <div>
-          <label htmlFor="date" className="block text-sm font-medium text-gray-700">Preferred Date</label>
-          <input type="date" name="date" id="date" required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500" />
-        </div>
-        <div>
-          <label htmlFor="service" className="block text-sm font-medium text-gray-700">Service Required</label>
-          <select id="service" name="service" required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500">
-            <option>Private Dinner</option>
-            <option>Cooking Class</option>
-            <option>Corporate Event</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
-          <textarea id="message" name="message" rows={4} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500"></textarea>
-        </div>
-        <div>
-          <button 
-            type="submit" 
-            disabled={status === 'submitting'}
-            className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 disabled:bg-gray-400"
-          >
-            {status === 'submitting' ? 'Sending...' : 'Send Request'}
-          </button>
-        </div>
-        {message && (
-          <p className={`text-center ${status === 'success' ? 'text-green-600' : 'text-red-600'}`}>
-            {message}
-          </p>
-        )}
-      </form>
+    <div className="bg-background py-24 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-3xl">
+        <h2 className="text-4xl font-extrabold text-text sm:text-5xl text-center font-serif mb-16">Book a Service</h2>
+        <form onSubmit={handleSubmit} className="space-y-8 bg-white p-10 rounded-xl shadow-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <label htmlFor="name" className="block text-lg font-medium text-text">Full Name</label>
+              <input type="text" name="name" id="name" required className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary focus:border-primary" />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-lg font-medium text-text">Email Address</label>
+              <input type="email" name="email" id="email" required className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary focus:border-primary" />
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <label htmlFor="phone" className="block text-lg font-medium text-text">Phone Number</label>
+              <input type="tel" name="phone" id="phone" className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary focus:border-primary" />
+            </div>
+            <div>
+              <label htmlFor="date" className="block text-lg font-medium text-text">Preferred Date</label>
+              <input type="date" name="date" id="date" required className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary focus:border-primary" />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="service" className="block text-lg font-medium text-text">Service Required</label>
+            <select id="service" name="service" required className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+              <option>Private Dinner</option>
+              <option>Cooking Class</option>
+              <option>Corporate Event</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="message" className="block text-lg font-medium text-text">Message</label>
+            <textarea id="message" name="message" rows={5} className="mt-2 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-primary focus:border-primary"></textarea>
+          </div>
+          <div>
+            <button 
+              type="submit" 
+              disabled={status === 'submitting'}
+              className="w-full flex justify-center py-4 px-6 border border-transparent rounded-full shadow-sm text-lg font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:bg-gray-400 transition-transform transform hover:scale-105"
+            >
+              {status === 'submitting' ? 'Sending...' : 'Send Request'}
+            </button>
+          </div>
+          {message && (
+            <p className={`text-center text-lg ${status === 'success' ? 'text-green-600' : 'text-red-600'}`}>
+              {message}
+            </p>
+          )}
+        </form>
+      </div>
     </div>
   );
 }
